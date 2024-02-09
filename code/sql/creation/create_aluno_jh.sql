@@ -1,14 +1,14 @@
 CREATE TABLE "alunos" (
-  "id" varchar UNIQUE PRIMARY KEY,
-  "fk_responsavel" varchar NOT NULL references responsaveis (id_responsavel),
-  "cpf_aluno" char(11) NOT NULL,
+  "id_aluno" varchar UNIQUE PRIMARY KEY,
+  "fk_responsavel" varchar NOT NULL,
+  "cpf_aluno" char(11) unique NOT NULL,
   "nome_aluno" varchar(80) NOT NULL,
   "nome_social_aluno" varchar(80),
   "email_aluno" varchar(40),
   "telefone_aluno" bigint NOT NULL,
-  "data_nascimento" date,
-  "genero" varchar(15) NOT NULL,
-  "prioridade" char(1),
+  "data_nascimento" date NOT NULL,
+  "genero" varchar(1) CHECK (genero in('M', 'F')),
+  "prioridade" char(1) NOT NULL CHECK (prioridade in('A', 'M', 'B')),
   "inicio_atendimento" date NOT NULL,
   "fim_atendimento" date
 );
