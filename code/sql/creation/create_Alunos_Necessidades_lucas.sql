@@ -1,6 +1,4 @@
-CREATE TABLE Alunos_Necessidades (
-    fk_aluno VARCHAR(10) NOT NULL,
-    fk_necessidade VARCHAR(10) NOT NULL,
-    FOREIGN KEY (fk_aluno) REFERENCES Alunos(id),
-    FOREIGN KEY (fk_necessidade) REFERENCES Necessidades(id)
+CREATE TABLE alunos_necessidades (
+    fk_aluno REFERENCES alunos(id_aluno),
+    fk_necessidade VARCHAR REFERENCES necessidades(id_necessidade)
 );
