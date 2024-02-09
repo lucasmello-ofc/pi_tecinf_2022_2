@@ -3,5 +3,5 @@ create table horarios(
 	hora_inicio time NOT null,
 	hora_fim time NOT NULL,
 	dia_semana varchar(20), 
-	check ( dia_semana in ('segunda', 'terça', 'quarta', 'quinta', 'sexta'))
+	check ( dia_semana in ('Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sabado'))
 )
