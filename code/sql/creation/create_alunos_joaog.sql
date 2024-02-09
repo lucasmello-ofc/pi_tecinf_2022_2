@@ -7,7 +7,7 @@ CREATE TABLE "alunos" (
   "email_aluno" varchar(40),
   "telefone_aluno" bigint NOT NULL,
   "data_nascimento" date NOT NULL,
-  "genero" char(1)   check (genero in ( 'M' , 'f' )) ,
+  "genero" char(1)   check (genero in ( 'M' , 'F' )) ,
   "prioridade" char(1) NOT NULL    check (prioridade in ( 'A', 'M' ,  'B'  )),
   "inicio_atendimento" date NOT NULL,
   "fim_atendimento" date
