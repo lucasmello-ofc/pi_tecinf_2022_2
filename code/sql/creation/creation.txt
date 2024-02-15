@@ -1,1 +1,0 @@
-Aqui ficam os scripts SQL de Criação (CREATE) das tabelas.
