@@ -17,11 +17,11 @@ export class AlunoNecessidade {
     })
     fk_necessidade: string
 
-    @ManyToOne(() => Aluno, aluno => aluno, { primary: true })
+    @ManyToOne(() => Aluno, aluno => aluno)
     @JoinColumn({ name: "fk_aluno" })
     aluno: Aluno
 
-    @ManyToOne(() => Necessidade, necessidade => necessidade, { primary: true })
+    @ManyToOne(() => Necessidade, necessidade => necessidade)
     @JoinColumn({ name: "fk_necessidade" })
     necessidade: Necessidade
 }
