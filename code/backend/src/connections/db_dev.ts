@@ -1,13 +1,20 @@
 import { DataSource } from "typeorm"
-import { Necessidade } from "../models/necessidade"
+import { Aluno } from "../models/alunos"
+import { AlunoCurso } from "../models/alunos_cursos"
 import { AlunoNecessidade } from "../models/aluno_necessidade"
+import { Curso } from "../models/cursos"
+import { Horario } from "../models/horario"
+import { Necessidade } from "../models/necessidade"
+import { Responsavel } from "../models/responsavel"
+import { Tutor } from "../models/tutor"
 
 const DevDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
-    port: 5433,
+    // port: 5433,
+    port: 5432,
     username: "postgres",
     password: "postgres",
     database: "inclusimap",
-    entities: [Necessidade, AlunoNecessidade]
+    entities: [Aluno, AlunoCurso, AlunoNecessidade, Curso, Horario, Necessidade, Responsavel, Tutor]
 })
