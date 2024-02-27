@@ -19,10 +19,10 @@ export class TutoreHorario { // Corrigido o nome da classe para TutoreHorario
 
     @ManyToOne(() => Tutores, tutore => tutore)
     @JoinColumn({ name: "fk_tutore" }) 
-    tutor: Tutores;
+    tutor: Tutores
 
     @ManyToOne(() => Horarios, horario => horario)
     @JoinColumn({ name: "fk_horario" })
-    horario: Horarios;
+    horario: Horarios
 }
 
