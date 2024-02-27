@@ -1,44 +1,41 @@
 import { Entity, PrimaryColumn, Column } from "typeorm"
 
 @Entity("cursos")
-export class curso{
+export class Curso {
     @PrimaryColumn({
-    type: "varchar"
-    })
-    id_curso: string
-    @Column({
         type: "varchar"
     })
-    descricao_curso:string
+    id_curso :string
     @Column({
-    type: "varchar",
-    length: 255,
-    nullable: false
+        type: "varchar",
+        length: 255,
+        nullable: false
     })
-    turno:string
+    descricao_curso:string
     @Column({
     type: "varchar",
     length: 15,
     nullable: false
     })
-    modalidade:string
+    turno:string
     @Column({
     type: "varchar",
     length: 30,
     nullable: false
     })
-    eixo_dpto:string
+    modalidade:string
     @Column({
     type: "varchar",
     length: 10,
     nullable: false
     })
-    unidade_campus: string
+    eixo_dpto:string
     @Column({
         type: "varchar",
         length: 50,
         nullable: false
     })
+    unidade_campus: string
     semestre: boolean
     presencial: boolean
 }
