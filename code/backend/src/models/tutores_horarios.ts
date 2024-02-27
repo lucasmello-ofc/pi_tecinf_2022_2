@@ -5,13 +5,13 @@ import { Horario } from "./horario"
 @Entity("tutores_horarios")
 export class TutoreHorario { 
 
-    @PrimaryColumn({
+    @Column({
         type: "varchar",
         nullable: false
     })
     fk_tutore: string
 
-    @PrimaryColumn({
+    @Column({
         type: "varchar",
         nullable: false
     })
