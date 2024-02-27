@@ -1,6 +1,6 @@
 import { Entity, PrimaryColumn, ManyToOne, JoinColumn, Column } from "typeorm"
-import { Tutores } from "./tutores"
-import { Horarios } from "./horarios"
+import { Tutor } from "./tutor"
+import { Horario } from "./horario"
 
 @Entity("tutores_horarios")
 export class TutoreHorario { // Corrigido o nome da classe para TutoreHorario
@@ -17,12 +17,12 @@ export class TutoreHorario { // Corrigido o nome da classe para TutoreHorario
     })
     fk_horario: string
 
-    @ManyToOne(() => Tutores, tutore => tutore)
+    @ManyToOne(() => Tutor, tutor => tutor)
     @JoinColumn({ name: "fk_tutore" }) 
-    tutor: Tutores
+    tutor: Tutor
 
-    @ManyToOne(() => Horarios, horario => horario)
+    @ManyToOne(() => Horario, horario => horario)
     @JoinColumn({ name: "fk_horario" })
-    horario: Horarios
+    horario: Horario
 }
 
