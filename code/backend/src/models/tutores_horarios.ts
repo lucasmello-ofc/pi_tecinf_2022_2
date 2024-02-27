@@ -23,6 +23,4 @@ export class TutoreHorario {
 
     @ManyToOne(() => Horarios, horario => horario)
     @JoinColumn({ name: "fk_horario" })
-    horario: Horarios;
-}
-
+    horario: Horario
