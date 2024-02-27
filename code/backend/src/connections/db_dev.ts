@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm"
 import { Necessidade } from "../models/necessidade"
+import { AcaoEducacional } from "../models/acao_educacional"
 
 const DevDataSource = new DataSource({
     type: "postgres",
@@ -8,5 +9,5 @@ const DevDataSource = new DataSource({
     username: "postgres",
     password: "postgres",
     database: "inclusimap",
-    entities: [Necessidade]
+    entities: [Necessidade,AcaoEducacional]
 })
