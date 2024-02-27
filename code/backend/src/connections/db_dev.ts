@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm"
-import { AcaoEducacional } from "../models/acoes_educacionais"
+import { AcaoEducacional } from "../models/acao_educacional"
 import { Aluno } from "../models/aluno"
 import { AlunoCurso } from "../models/aluno_curso"
 import { AlunoNecessidade } from "../models/aluno_necessidade"
