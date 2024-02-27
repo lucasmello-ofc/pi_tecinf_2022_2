@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm"
 import { Necessidade } from "../models/necessidade"
+import { horario } from "../models/horario"
 
 const DevDataSource = new DataSource({
     type: "postgres",
