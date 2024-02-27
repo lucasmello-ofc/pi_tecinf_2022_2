@@ -1,7 +1,7 @@
 import { Entity, PrimaryColumn, Column } from "typeorm"
 
-@Entity("horario")
-export class Horario {
+@Entity("necessidade")
+export class Necessidade {
     @PrimaryColumn({
         type: "varchar"
     })
