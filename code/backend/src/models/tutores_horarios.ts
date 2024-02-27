@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn, ManyToOne, JoinColumn, Column } from "typeorm";
+import { Entity, PrimaryColumn, ManyToOne, JoinColumn, Column } from "typeorm"
 import { Tutores } from "./tutores"
 import { Horarios } from "./horarios"
 
