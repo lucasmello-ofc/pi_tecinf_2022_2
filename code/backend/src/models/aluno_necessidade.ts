@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm"
+import { Entity,PrimaryColumn, Column } from "typeorm"
 import { Aluno } from "./alunos"
 import { Necessidade } from "./necessidade"
 
@@ -16,12 +16,4 @@ export class AlunoNecessidade {
         nullable: false
     })
     fk_necessidade: string
-
-    @ManyToOne(() => Aluno, aluno => aluno)
-    @JoinColumn({ name: "fk_aluno" })
-    aluno: Aluno
-
-    @ManyToOne(() => Necessidade, necessidade => necessidade)
-    @JoinColumn({ name: "fk_necessidade" })
-    necessidade: Necessidade
 }
