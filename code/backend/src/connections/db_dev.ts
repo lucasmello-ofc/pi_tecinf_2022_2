@@ -1,10 +1,10 @@
 import { DataSource } from "typeorm"
-import { Necessidade } from "../models/necessidade"
-import { horario } from "../models/horario"
-import { Responsavel } from "../models/responsavel"
-import { Aluno_curso } from "../models/alunos_cursos"
-import { aluno } from "../models/alunos"
+import { Aluno } from "../models/alunos"
+import { AlunoCurso } from "../models/alunos_cursos"
 import { Curso } from "../models/cursos"
+import { Horario } from "../models/horario"
+import { Necessidade } from "../models/necessidade"
+import { Responsavel } from "../models/responsavel"
 import { Tutor } from "../models/tutor"
 
 const DevDataSource = new DataSource({
@@ -15,5 +15,5 @@ const DevDataSource = new DataSource({
     username: "postgres",
     password: "postgres",
     database: "inclusimap",
-    entities: [Necessidade,horario, Responsavel, Aluno_curso, aluno, Curso, Tutor]
+    entities: [Aluno, AlunoCurso, Curso, Horario, Necessidade, Responsavel, Tutor]
 })
