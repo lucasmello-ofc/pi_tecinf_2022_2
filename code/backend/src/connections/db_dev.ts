@@ -6,7 +6,8 @@ import { AlunoNecessidade } from "../models/aluno_necessidade"
 import { Curso } from "../models/curso"
 import { Horario } from "../models/horario"
 import { Necessidade } from "../models/necessidade"
-import { AcaoEducacional } from "../models/acao_educacional"
+import { Responsavel } from "../models/responsavel"
+import { Tutor } from "../models/tutor"
 
 const DevDataSource = new DataSource({
     type: "postgres",
