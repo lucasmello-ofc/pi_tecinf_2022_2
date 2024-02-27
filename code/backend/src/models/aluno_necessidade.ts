@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from "typeorm"
-import { Aluno } from "./Aluno"
+import { Aluno } from "./alunos"
 import { Necessidade } from "./necessidade"
 
 @Entity("alunos_necessidades")
