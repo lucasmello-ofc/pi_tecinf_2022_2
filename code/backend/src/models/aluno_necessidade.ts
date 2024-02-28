@@ -6,6 +6,6 @@ export class AlunoNecessidade {
     @PrimaryColumn({ type: "varchar" })
     fk_aluno: string
 
-    @PrimaryColumn({ type: "varchar })
+    @PrimaryColumn({ type: "varchar"})
     fk_necessidade: string
 }

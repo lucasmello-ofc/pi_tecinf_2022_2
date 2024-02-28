@@ -1,10 +1,20 @@
-import { Entity, PrimaryColumn,  Column } from "typeorm"
+
+import { Entity, Column, Check, PrimaryColumn, ManyToOne } from 'typeorm'
+
+
+import {v4 as uuid}   from "uuid"
+import { Responsavel } from './responsavel'
+
+
 
 @Entity("alunos")
+@Check ("genero in ('m','f')")
+@Check ("prioridadde('A','M','B')")
 export class Aluno {
     
     @PrimaryColumn({ type: "varchar" })
     id_aluno: string
+    @ManyToOne(() => Responsavel , responsavel => responsavel.id_responsavel)
     
     @Column({ type: "varchar", nullable: false })
     fk_responsavel: string
@@ -27,10 +37,11 @@ export class Aluno {
     @Column({ type:"date", nullable :false })
     data_nacimento: Date
     
-    @Column({ type:"char", length: 1 })
+    @Column({ type:"char", length: 1 , })
     genero: string
     
-    @Column({ type:"char", nullable:false, length: 1 })
+    @Column({ type:"char", nullable:false, length: 1 , 
+    })
     prioridade: string
     
     @Column({ type:"date", nullable:false })
@@ -38,4 +49,26 @@ export class Aluno {
     
     @Column({ type:"date" })
     fim_atendimeto : Date
+
+    @Column({
+        type: "timestamptz",
+    })
+    dataCriacao: Date
+    @Column({
+        type: "timestamptz"
+    })
+    dataUltimaAlteracao : Date
+    @Column({
+        type:"timestamptz"
+        
+    })
+    dataExclusao: Date
+    constructor(){
+
+        this.id_aluno = uuid()
+        this.dataCriacao = new Date()
+        this.dataUltimaAlteracao 
+        this.dataExclusao
+    }
 }
+
