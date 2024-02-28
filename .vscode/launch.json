@@ -5,7 +5,7 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "program": "${file}",
+            "program": "./code/backend/src/${file}",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
