@@ -1,15 +1,37 @@
 import { Entity, PrimaryColumn, Column, NumericType } from "typeorm"
 
+import { v4 as uuid } from "uuid"
+
 @Entity("responsaveis")
 export class Responsavel {
     @PrimaryColumn({ type: "varchar" })
-    id_responsavel: string
+    idResponsavel: string
+
     @Column({ type: "varchar", length: 80, nullable: false })
-    nome_responsavel: string
+    nomeResponsavel: string
+
     @Column({ type: "varchar", length: 11, nullable: false, unique: true })
     cpf: string
+
     @Column({ type: "varchar", length: 40 })
-    email_responsavel: string
+    emailResponsavel: string
+
     @Column({ type: "bigint", nullable: false })
-    telefone_responsavel: number
+    telefoneResponsavel: number
+
+    @Column({ type: "timestamptz" })
+    dataCriacao: Date
+
+    @Column({ type: "timestamptz" })
+    dataUltimaAlteracao: Date
+
+    @Column({ type: "timestamptz" })
+    dataExclusao: Date
+
+    constructor(){
+        this.idResponsavel = uuid()
+        this.dataCriacao = new Date()
+        this.dataUltimaAlteracao 
+        this.dataExclusao 
+    }
 }
