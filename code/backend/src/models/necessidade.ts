@@ -1,5 +1,7 @@
 import { Entity, PrimaryColumn, Column } from "typeorm"
 
+
+
 @Entity("necessidades")
 export class Necessidade {
     @PrimaryColumn({ type: "varchar" })
