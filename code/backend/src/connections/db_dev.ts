@@ -8,6 +8,7 @@ import { Horario } from "../models/horario"
 import { Necessidade } from "../models/necessidade"
 import { Responsavel } from "../models/responsavel"
 import { Tutor } from "../models/tutor"
+import { TutorHorario } from "../models/tutor_horario"
 
 const DevDataSource = new DataSource({
     type: "postgres",
@@ -17,5 +18,5 @@ const DevDataSource = new DataSource({
     username: "postgres",
     password: "postgres",
     database: "inclusimap",
-    entities: [AcaoEducacional, Aluno, AlunoCurso, AlunoNecessidade, Curso, Horario, Necessidade, Responsavel, Tutor]
+    entities: [AcaoEducacional, Aluno, AlunoCurso, AlunoNecessidade, Curso, Horario, Necessidade, Responsavel, Tutor, TutorHorario]
 })

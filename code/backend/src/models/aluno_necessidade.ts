@@ -1,4 +1,4 @@
-import { Entity,PrimaryColumn, Column, ManyToMany, ManyToOne } from "typeorm"
+import { Entity, Column, ManyToOne } from "typeorm"
 import { Necessidade } from "./necessidade"
 import { Aluno } from "./aluno"
 
@@ -6,10 +6,10 @@ import { Aluno } from "./aluno"
 export class AlunoNecessidade {
 
     @ManyToOne(() => Aluno, aluno => aluno.id_aluno)
-    @PrimaryColumn({ type: "varchar" })
+    @Column({ type: "varchar" })
     fk_aluno: string
 
     @ManyToOne(() => Necessidade, necessidade => necessidade.id_necessidade)
-    @PrimaryColumn({ type: "varchar" })
+    @Column({ type: "varchar" })
     fk_necessidade: string
 }
