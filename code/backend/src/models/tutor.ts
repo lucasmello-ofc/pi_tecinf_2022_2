@@ -1,4 +1,5 @@
 import { Entity, PrimaryColumn, Column } from "typeorm"
+import { v4 as uuid } from "uuid"
 
 @Entity("tutores")
 export class Tutor {
@@ -16,5 +17,18 @@ export class Tutor {
     cargo: string
     @Column({ type: "varchar", length: 50 })
     formacao: string
+//ATRIBUTOS DE CONTROLE
+    @Column({ type: "timestamptz" })
+    dataCriacao: Date
+    @Column({ type: "timestamptz" })
+    dataUltimaAlteracao: Date
+    @Column({ type: "timestamptz" })
+    dataExclusao: Date
+
+    constructor(){
+        this.id_tutor = uuid()
+        this.dataCriacao = new Date()
+    }
+
 }
 

@@ -7,6 +7,6 @@ create table horarios(
 		'Quinta-Feira', 'Sexta-Feira', 'Sabado')
 	)
 	data_criacao timestamptz,
-    data_ultima_altercao timestamptz,
-    data_exclusao timestamptz
+  data_ultima_altercao timestamptz,
+  data_exclusao timestamptz
 );

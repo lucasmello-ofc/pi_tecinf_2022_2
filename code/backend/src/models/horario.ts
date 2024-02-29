@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column, Check} from "typeorm"
 import { v4 as uuid } from "uuid"
 
 @Entity("horarios")
-@Check("dia_seman  in ('Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sabado')")
+@Check("dia_semana  in ('Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sabado')")
 export class Horario {
     @PrimaryColumn({ type: "varchar" })
     id_horario : string
@@ -27,5 +27,6 @@ export class Horario {
 
     constructor(){
         this.id_horario = uuid()
+        this.dataCriacao = new Date()
     }
 }
