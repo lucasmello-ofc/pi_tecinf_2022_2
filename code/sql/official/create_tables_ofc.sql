@@ -15,7 +15,10 @@ CREATE TABLE "responsaveis" (
   "nome_responsavel" varchar(80) NOT NULL,
   "cpf_responsavel" char(11) UNIQUE NOT NULL,
   "email_responsavel" varchar(40) NOT NULL,
-  "telefone_responsavel" bigint NOT NULL
+  "telefone_responsavel" bigint NOT NULL,
+  "data_criacao" timestamptz,
+  "data_ultima_alteracao" timestamptz,
+  "data_exclusao" timestamptz
 );
 
 CREATE TABLE cursos (
@@ -28,7 +31,10 @@ CREATE TABLE cursos (
   eixo_dpto varchar NOT NULL,
   unidade_campus varchar(50) NOT NULL,
   semestral boolean DEFAULT true, 
-  presencial boolean DEFAULT true
+  presencial boolean DEFAULT true,
+  data_criacao timestamp,
+  data_ultima_alteracao timestamp
+  data_exclusao timestamp
 );
 
 CREATE TABLE tutores (
@@ -113,5 +119,8 @@ create table alunos_cursos (
 	fk_aluno varchar not null,
 	fk_curso varchar not null,
 	foreign key (fk_aluno) references alunos(id_aluno),
-	foreign key (fk_curso) references cursos(id_curso)
+	foreign key (fk_curso) references cursos(id_curso),
+  "data_criacao" timestamptz,
+  "data_ultima_alteracao" timestamptz,
+  "data_exclusao" timestamptz
 );

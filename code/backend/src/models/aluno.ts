@@ -1,15 +1,12 @@
 
 import { Entity, Column, Check, PrimaryColumn, ManyToOne } from 'typeorm'
-
-
 import {v4 as uuid}   from "uuid"
 import { Responsavel } from './responsavel'
-
-
 
 @Entity("alunos")
 @Check ("genero in ('m','f')")
 @Check ("prioridadde('A','M','B')")
+
 export class Aluno {
     
     @PrimaryColumn({ type: "varchar" })
@@ -40,8 +37,7 @@ export class Aluno {
     @Column({ type:"char", length: 1 , })
     genero: string
     
-    @Column({ type:"char", nullable:false, length: 1 , 
-    })
+    @Column({ type:"char", nullable:false, length: 1 })
     prioridade: string
     
     @Column({ type:"date", nullable:false })
@@ -67,8 +63,6 @@ export class Aluno {
 
         this.id_aluno = uuid()
         this.dataCriacao = new Date()
-        this.dataUltimaAlteracao 
-        this.dataExclusao
     }
 }
 

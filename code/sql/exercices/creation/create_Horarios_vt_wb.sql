@@ -6,4 +6,7 @@ create table horarios(
 		dia_semana in ('Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 
 		'Quinta-Feira', 'Sexta-Feira', 'Sabado')
 	)
+	data_criacao timestamptz,
+  data_ultima_altercao timestamptz,
+  data_exclusao timestamptz
 );
