@@ -1,32 +1,28 @@
-import { Entity, PrimaryColumn, Column, ManyToOne } from "typeorm"
-import {v4 as uuid } from "uuid"
-import { Check } from "typeorm"
+import { Entity, PrimaryColumn, Column, ManyToOne, Check } from "typeorm"
 import { Aluno } from "./aluno"
-import { Curso } from "./curso"
-
-import { v4 as uuid } from "uuid"
 import { Curso } from "./curso"
 
 @Entity("alunos_cursos")
 @Check("situacao IN ('Matriculado','Concluído','Evadido', 'Trancado')")
+
 export class AlunoCurso {
 
+    // Atributos da Tabela
     @PrimaryColumn({ type: "varchar" })
     matricula: string
-
-    @ManyToOne(() => Curso, curso => curso.id_matricula )
 
     @Column({ type: "varchar", nullable: false })
     situacao: string
 
-    @ManyToOne(()=> Aluno, alunos => alunos.id_aluno)
+    @ManyToOne(()=> Aluno, aluno => aluno.id_aluno)
     @Column({ type: "varchar", nullable: false })
     fk_aluno: string
 
-    @ManyToOne(()=> Curso, cursos => cursos.id_curso)
+    @ManyToOne(()=> Curso, curso => curso.id_curso)
     @Column({ type: "varchar", nullable: false })
     fk_curso: string
 
+    // Atributos de Controle
     @Column({type:"timestamptz", nullable: false })
     dataCriacao: Date
 
@@ -36,11 +32,8 @@ export class AlunoCurso {
     @Column({type:"timestamptz", nullable: false})
     dataExclusao: Date
 
-    constructor (){
-        this.matricula = uuid()
+    constructor(){
         this.dataCriacao = new Date()
-        this.dataUltimaAlteracao
-        this.dataExclusao
     }
 }
 
