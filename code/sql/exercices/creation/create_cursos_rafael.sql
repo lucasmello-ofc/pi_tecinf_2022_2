@@ -9,4 +9,7 @@ CREATE TABLE cursos (
   unidade_campus varchar(50) NOT NULL,
   semestral boolean DEFAULT true, 
   presencial boolean DEFAULT true
+  data_criacao timestamptz
+  data_ultima_alteracao timestamptz
+  data_exclusao timestamptz
 );
