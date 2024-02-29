@@ -31,7 +31,10 @@ CREATE TABLE cursos (
   eixo_dpto varchar NOT NULL,
   unidade_campus varchar(50) NOT NULL,
   semestral boolean DEFAULT true, 
-  presencial boolean DEFAULT true
+  presencial boolean DEFAULT true,
+  data_criacao timestamp,
+  data_ultima_alteracao timestamp
+  data_exclusao timestamp
 );
 
 CREATE TABLE tutores (

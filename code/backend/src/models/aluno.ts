@@ -1,5 +1,7 @@
 import { Entity, PrimaryColumn,  Column } from "typeorm"
 
+
+
 @Entity("alunos")
 export class Aluno {
     
