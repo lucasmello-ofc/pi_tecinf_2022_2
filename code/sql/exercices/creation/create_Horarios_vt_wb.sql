@@ -1,12 +1,13 @@
 create table horarios(
-	id_horario varchar(11) primary key,
-	hora_inicio time NOT null,
+	id_horario varchar PRIMARY KEY,
+	hora_inicio time NOT NULL,
 	hora_fim time NOT NULL,
 	dia_semana varchar(20), check ( 
 		dia_semana in ('Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 
-		'Quinta-Feira', 'Sexta-Feira', 'Sabado')
-	)
-	data_criacao timestamptz,
-  data_ultima_altercao timestamptz,
-  data_exclusao timestamptz
+		'Quinta-Feira', 'Sexta-Feira', 'Sábado')
+	),
+	-- colunas de controle
+  data_criacao TIMESTAMP WITH TIME ZONE,
+  data_ultima_alteracao TIMESTAMP WITH TIME ZONE,
+  data_exclusao TIMESTAMP WITH TIME ZONE
 );

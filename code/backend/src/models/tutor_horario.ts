@@ -5,11 +5,11 @@ import { Tutor } from "./tutor"
 @Entity("tutor_horario")
 export class TutorHorario {
 
-    @ManyToOne(() => Tutor, tutores => tutores.id_tutor)
-    @Column({ type: "varchar",length:10, nullable: false })
-    fk_tutor: string
+  @ManyToOne(() => Tutor, tutor => tutor.id_tutor)
+  @Column({ type: "varchar", nullable: false })
+  fk_tutor: string
 
-    @ManyToOne(() => Horario, horarios => horarios.id_horario)
-    @Column({ type: "varchar",length:10, nullable: false })
-    fk_horario: string
+  @ManyToOne(() => Horario, horario => horario.id_horario)
+  @Column({ type: "varchar", nullable: false })
+  fk_horario: string
 }

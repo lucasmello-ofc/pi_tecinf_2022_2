@@ -6,9 +6,8 @@ CREATE TABLE tutores (
 	telefone_tutor bigint NOT NULL,
 	cargo varchar NOT NULL,
 	formacao varchar(50) not null
-
-	data_criacao timestamptz
-	data_ultima_alteracao timestamptz
-	data_exclusao timestamptz
-
+  -- colunas de controle
+  data_criacao TIMESTAMP WITH TIME ZONE,
+  data_ultima_alteracao TIMESTAMP WITH TIME ZONE,
+  data_exclusao TIMESTAMP WITH TIME ZONE
 );

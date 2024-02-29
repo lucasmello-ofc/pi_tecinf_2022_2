@@ -1,24 +1,26 @@
-import { Entity, PrimaryColumn, Column, NumericType } from "typeorm"
-
+import { Entity, PrimaryColumn, Column } from "typeorm"
 import { v4 as uuid } from "uuid"
 
 @Entity("responsaveis")
 export class Responsavel {
+
+    // Atributos da Tabela
     @PrimaryColumn({ type: "varchar" })
-    idResponsavel: string
+    id_responsavel: string
 
     @Column({ type: "varchar", length: 80, nullable: false })
-    nomeResponsavel: string
+    nome_responsavel: string
 
     @Column({ type: "varchar", length: 11, nullable: false, unique: true })
-    cpf: string
+    cpf_responsavel: string
 
-    @Column({ type: "varchar", length: 40 })
-    emailResponsavel: string
+    @Column({ type: "varchar", length: 40, nullable: false })
+    email_responsavel: string
 
     @Column({ type: "bigint", nullable: false })
-    telefoneResponsavel: number
+    telefone_responsavel: number
 
+    // Atributos de Controle
     @Column({ type: "timestamptz" })
     dataCriacao: Date
 
@@ -29,9 +31,7 @@ export class Responsavel {
     dataExclusao: Date
 
     constructor(){
-        this.idResponsavel = uuid()
+        this.id_responsavel = uuid()
         this.dataCriacao = new Date()
-        this.dataUltimaAlteracao 
-        this.dataExclusao 
     }
 }
