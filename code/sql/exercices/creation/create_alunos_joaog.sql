@@ -1,4 +1,4 @@
-CREATE TABLE "alunos" (
+CREATE TABLE alunos (
   id_aluno varchar PRIMARY KEY,
   fk_responsavel varchar NOT  NULL references responsaveis (id_responsavel),
   cpf_aluno char(11) NOT NULL UNIQUE,

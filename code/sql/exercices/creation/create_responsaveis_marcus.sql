@@ -1,4 +1,4 @@
-CREATE TABLE "responsaveis" (
+CREATE TABLE responsaveis (
   id_responsavel varchar PRIMARY KEY,
   nome_responsavel varchar(80) NOT NULL,
   cpf_responsavel char(11) UNIQUE NOT NULL,
