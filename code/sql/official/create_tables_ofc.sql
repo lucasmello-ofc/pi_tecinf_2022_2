@@ -67,6 +67,9 @@ CREATE TABLE "alunos" (
   "prioridade" char(1) NOT NULL CHECK (prioridade in('A', 'M', 'B')),
   "inicio_atendimento" date NOT NULL,
   "fim_atendimento" date
+  data_criacao  timestamptz
+  data_ultima_alteracao timestamptz
+  data_excusao timestamptz
 );
 
 -- Tabelas Fato
