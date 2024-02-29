@@ -4,12 +4,17 @@ import { Check } from "typeorm"
 import { Aluno } from "./aluno"
 import { Curso } from "./curso"
 
+import { v4 as uuid } from "uuid"
+import { Curso } from "./curso"
+
 @Entity("alunos_cursos")
 @Check("situacao IN ('Matriculado','Concluído','Evadido', 'Trancado')")
 export class AlunoCurso {
 
     @PrimaryColumn({ type: "varchar" })
     matricula: string
+
+    @ManyToOne(() => Curso, curso => curso.id_matricula )
 
     @Column({ type: "varchar", nullable: false })
     situacao: string
