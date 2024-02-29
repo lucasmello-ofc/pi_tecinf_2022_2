@@ -8,7 +8,7 @@ import { Responsavel } from "./responsavel"
 export class Curso {
     @PrimaryColumn({ type: "varchar" })
     id_curso :string
-    @ManyToOne(() => Curso, responsavel => responsavel.id_curso)
+    @ManyToOne(() => Curso, curso => responsavel.id_curso)
     @Column({ type: "varchar", length: 255, nullable: false })
     descricao_curso: string
     @Column({ type: "varchar", length: 15, nullable: false })
@@ -19,20 +19,18 @@ export class Curso {
     eixo_dpto:string
     @Column({ type: "varchar", length: 50, nullable: false })
     unidade_campus: string
-    @Column({ type: "bool" })
+    @Column({ type: "date" })
     semestral: boolean
-    @Column({type: "bool" })
-    data_criacao: Date
-    @Column({type: "timestamptz"})
-    data_exclusao: Date
-    @Column({type: "timestamptz"})
-    data_ultima_alteracao: Date
-    @Column({type: "timestamptz"})
+    @Column({ type: "date" })
     presencial: boolean
+    @Column({ type: "timestamptz"  })
+    dataCriacao: Date
+    @Column({ type: "timestamptz" })
+    dataUltimaAlteracao: Date
+    @Column ({ type: "timestamptz" })
+    dataExclusao: Date
     constructor(){
         this.id_curso = uuid()
-        this.data_criacao
-        this.data_ultima_alteracao
-        this.data_exclusao
-}
+        this.dataCriacao = new Date()
+    }
 }
